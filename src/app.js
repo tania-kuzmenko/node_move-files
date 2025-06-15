@@ -7,9 +7,6 @@ const path = require('path');
 const args = process.argv.slice(2);
 const [src, dest] = args;
 
-console.log(src);
-console.log();
-
 if (!src || !dest) {
   console.error('Source or destination is not defined');
   process.exit(0);
@@ -106,7 +103,7 @@ const fileMove = async () => {
     console.log(`Moved: ${resolvedSrc} → ${resolvedDest}`);
   } catch (err) {
     console.error('Error:', err.message);
-    process.exit(1);
+    process.exit(0);
   }
 };
 
